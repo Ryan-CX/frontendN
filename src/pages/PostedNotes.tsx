@@ -28,9 +28,12 @@ const PostedNotes: React.FC = () => {
 	const getData = async () => {
 		setLoading(true);
 		try {
-			const result = await axios.post('/api/newsitems/getallpostbyuserid', {
-				userid: user._id,
-			});
+			const result = await axios.post(
+				'https://notenewsapp.herokuapp.com/api/newsitems/getallpostbyuserid',
+				{
+					userid: user._id,
+				}
+			);
 			setLoading(false);
 			setNewsItems(result.data);
 		} catch (error) {
@@ -45,9 +48,12 @@ const PostedNotes: React.FC = () => {
 	const deleteNotes = async (newsid: string) => {
 		setLoading(true);
 		try {
-			await axios.post('/api/newsitems/deletenotes', {
-				newsid,
-			});
+			await axios.post(
+				'https://notenewsapp.herokuapp.com/api/newsitems/deletenotes',
+				{
+					newsid,
+				}
+			);
 			getData();
 			setLoading(false);
 

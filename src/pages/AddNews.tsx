@@ -42,7 +42,10 @@ const AddNews = () => {
 				postedBy: { userid: user._id, email: user.email },
 			};
 
-			await axios.post('/api/newsitems/addnewsitem', data);
+			await axios.post(
+				'https://notenewsapp.herokuapp.com/api/newsitems/addnewsitem',
+				data
+			);
 			setLoading(false);
 			toast.success('News item added successfully');
 			navigate('/home');

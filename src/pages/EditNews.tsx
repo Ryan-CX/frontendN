@@ -42,7 +42,10 @@ const EditNews: React.FC = () => {
 				newsid: newsid,
 			};
 
-			await axios.post('/api/newsitems/editmynotes', data);
+			await axios.post(
+				'https://notenewsapp.herokuapp.com/api/newsitems/editmynotes',
+				data
+			);
 			setLoading(false);
 			toast.success('News item edited successfully');
 			navigate('/home');
