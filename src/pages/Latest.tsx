@@ -8,8 +8,11 @@ type NewsItem = {
 	author: string;
 	title: string;
 	description: string;
-	urlToImage: string;
+	image: string;
 	url: string;
+	source: {
+		name: string;
+	};
 };
 
 const Latest: React.FC = () => {
@@ -20,7 +23,7 @@ const Latest: React.FC = () => {
 		setLoading(true);
 		try {
 			const result = await axios.get(
-				`https://newsapi.org/v2/top-headlines?country=us&apiKey=e070847634e5491eb300c4130f2317ea`
+				`https://gnews.io/api/v4/top-headlines?token=068255ebd9e7c8d6a57804f5dbbff2fa`
 			);
 			setLoading(false);
 			setNewsItems(result.data.articles);
@@ -58,10 +61,10 @@ const Latest: React.FC = () => {
 								</h1>
 								<p>{item.description}</p>
 								{/* img section for rendering url from the obj */}
-								<img src={item.urlToImage} alt='news' />
+								<img src={item.image} alt='news' />
 								<div className='flex justify-end flex-col items-end'>
 									<span className='text-gray-500 text-sm'>
-										By:{item.author}
+										By:{item.source.name}
 									</span>
 								</div>
 							</div>
