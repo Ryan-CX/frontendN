@@ -58,7 +58,7 @@ const AddNews = () => {
 	return (
 		<Layout>
 			{loading && <Spinner />}
-			<h1 className='text-2xl font-semibold mt-5 ml-5'>Add news</h1>
+			<h1 className='text-2xl font-semibold mt-5 ml-5'>Add Notes</h1>
 			<div className='px-5'>
 				<input
 					value={title}
