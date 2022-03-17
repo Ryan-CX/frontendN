@@ -85,10 +85,15 @@ const EditNews: React.FC = () => {
 			</div>
 
 			<div className='flex justify-end space-x-5 pr-5 pt-6'>
-				<button className='px-5 py-2 bg-red-500'>
+				<button
+					className='px-5 py-2 bg-red-500'
+					onClick={() => navigate('/home')}
+				>
+					Cancel
 					<CancelIcon />
 				</button>
 				<button className='px-5 py-2 bg-green-600' onClick={save}>
+					Save
 					<SaveAltIcon />
 				</button>
 			</div>

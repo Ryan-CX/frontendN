@@ -96,12 +96,16 @@ const PostedNotes: React.FC = () => {
 													className='px-5 py-2 bg-red-500'
 													onClick={() => navigate(`/edit/${item._id}`)}
 												>
+													{' '}
+													Edit
 													<EditIcon />
 												</button>
 												<button
 													className='px-5 py-2 bg-green-600'
 													onClick={() => deleteNotes(item._id)}
 												>
+													{' '}
+													Delete
 													<DeleteIcon />
 												</button>
 											</div>

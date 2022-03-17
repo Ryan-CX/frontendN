@@ -88,9 +88,11 @@ const AddNews = () => {
 					className='px-5 py-2 bg-red-500'
 					onClick={() => navigate('/home')}
 				>
+					Cancel
 					<CancelIcon />
 				</button>
 				<button className='px-5 py-2 bg-green-600' onClick={save}>
+					Save
 					<SaveAltIcon />
 				</button>
 			</div>
